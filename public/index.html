@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Eduardo Nieves</title>
+</head>
+<body>
+    
+
+    Hola Eduardo, buena tarde.
+
+Tal y como platicamos envío test técnico; La intención de este test no es tanto evaluar técnica porque eso se aprende con el paso de los días/semanas, sino evaluar estructura y la forma en cómo resuelves la prueba.
+
+Sin más.
+
+###### ###### ###### ###### ###### ###### ###### ###### ###### ######
+ 
+Crear un API en NodeJS (express) que tenga las siguientes características.
+
+- Login
+- usuario
+- password
+
+"Hacer catálogo falso" de usuarios con 2 usuarios 
+
+user : admin
+password : 4321
+
+user: user
+password: 1234
+
+- CRUD 2 catálogos
+
+* Categorías
+- nombre_corto ( dato único, de máximo 5 caracteres. Por ejemplo : ADMIN , GRAL , OPER )
+- nombre_categoria
+- descripcion
+
+* Productos
+- sku ( dato único máximo 5 caracteres. Por ejemplo GAS1, TOM1, LEC1, 12345, FE123 )
+- nombre_producto
+- descripcion
+- precio
+- categoria ( id del catálogo anterior )
+
+- Método de exportación de los productos
+* Este método debe ser un GET que al consumirse desde el navegador devuelve un archivo .csv con el contenido del catálogo de productos con los siguientes datos ( encabezados del csv)
+sku
+nombre_producto
+descripcion_producto
+precio
+nombre_corto_categoria
+nombre_categoria
+descripcion_categoria
+
+
+Para evaluar la prueba tendremos los sig criterios de aceptación.
+- Levantar proyecto
+- con npm ( si prefieres usar yarn no hay problema, pero de preferencia npm )
+
+- Probar Login
+* Ambos usuarios
+
+- Prueba CRUD de Categorías
+- Consultas
+- General
+- Por id
+- Por nombre
+- Alta
+- Actualización
+- Eliminación
+
+- Prueba CRUD Productos
+- Consultas
+- General
+- Por id
+- Por nombre
+- Alta
+- Actualización
+- Eliminación
+
+- Exportación de productos
+
+
+
+Para esta prueba no vamos a usar Bases de datos, todo debe ser en Arreglos. Es decir, cuando se detiene el servicio de NodeJs y ejecutemos de nuevo la prueba todo se reinicia conservando solo los 2 usuarios.
+
+###### ###### ###### ###### ###### ###### ###### ###### ###### ######
+
+Cualquier duda que tengas, puedes enviarme un email y te responderé de inmediato. Si es necesario hacemos una llamada breve por dudas o algo.
+
+La idea es que nos envíes esta prueba lo antes posible, no tenemos un tiempo límite para ejecutarlo pero claramente se tomará en cuenta para la evaluación. A criterio del equipo, se estima que la prueba se puede resolver, probar y entregar en un plazo de 4-6 horas.
+
+Suerte y atento a tus comentarios.
+Saludos.
+</body>
+</html>
