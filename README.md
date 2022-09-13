@@ -8,11 +8,11 @@ Una api con pequeñas validaciones para hacer pruebas y archivos de importacione
 Ejecutar el comando
 npm install
 
-## 2. ##
+## 2. POSTMAN ##
 Usar postman para ver como funciona los endpoints, el archivo exportado es: 
 Backend Organizame.postman_collection.json
 
-## 3 ##
+## 3. USUARIOS ##
 Usuarios para probar la autenticacion
 
 username : admin
