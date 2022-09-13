@@ -1,0 +1,412 @@
+{
+	"info": {
+		"_postman_id": "06bd69c7-93c6-436e-99c9-fee3ce4ab144",
+		"name": "Backend Organizame",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12032889"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"user\",\r\n    \"password\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/auth",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categoria",
+			"item": [
+				{
+					"name": "Find all",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjYyNjAzMjk4LCJleHAiOjE2NjI2MDY4OTh9.sT6UUcDDe4w-okkHRVOjpUVsTk955RJxj7cJyvHr6LU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api}}/categorias",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"categorias"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "tes",
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": "cdd",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjYyNjAzMjk4LCJleHAiOjE2NjI2MDY4OTh9.sT6UUcDDe4w-okkHRVOjpUVsTk955RJxj7cJyvHr6LU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"corto\":\"test1\",\r\n    \"nombre\":\"test nombre 1\",\r\n    \"descripcion\":\"test descripcion\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/categorias",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"categorias"
+							],
+							"query": [
+								{
+									"key": "limite",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "desde",
+									"value": "5",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjYyNjAzMjk4LCJleHAiOjE2NjI2MDY4OTh9.sT6UUcDDe4w-okkHRVOjpUVsTk955RJxj7cJyvHr6LU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"corto\":\"update test 3\",\r\n    \"nombre\":\"update tes nombre 5sd\",\r\n    \"descripcion\":\"categorias de productos que son dulcessdsd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/categorias/39bc8355-c35f-4116-9158-c1e66d5d0bce",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"categorias",
+								"39bc8355-c35f-4116-9158-c1e66d5d0bce"
+							],
+							"query": [
+								{
+									"key": "limite",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "desde",
+									"value": "5",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjYyNjAzMjk4LCJleHAiOjE2NjI2MDY4OTh9.sT6UUcDDe4w-okkHRVOjpUVsTk955RJxj7cJyvHr6LU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api}}/categorias/d99f42b7-0e4e-4436-aa07-77700d5a129d",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"categorias",
+								"d99f42b7-0e4e-4436-aa07-77700d5a129d"
+							],
+							"query": [
+								{
+									"key": "limite",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "desde",
+									"value": "5",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Producto",
+			"item": [
+				{
+					"name": "Find all",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjYyNjAzMjk4LCJleHAiOjE2NjI2MDY4OTh9.sT6UUcDDe4w-okkHRVOjpUVsTk955RJxj7cJyvHr6LU",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{api}}/productos",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"productos"
+							],
+							"query": [
+								{
+									"key": "limite",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "desde",
+									"value": "5",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exports",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjYyNjAzMjk4LCJleHAiOjE2NjI2MDY4OTh9.sT6UUcDDe4w-okkHRVOjpUVsTk955RJxj7cJyvHr6LU",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{api}}/productos/exports",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"productos",
+								"exports"
+							],
+							"query": [
+								{
+									"key": "limite",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "desde",
+									"value": "5",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjYyNjAzMjk4LCJleHAiOjE2NjI2MDY4OTh9.sT6UUcDDe4w-okkHRVOjpUVsTk955RJxj7cJyvHr6LU",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sku\":\"test 2\",\r\n    \"nombre\":\"test nombre 1\",\r\n    \"descripcion\":\"test descripcion 3\",\r\n    \"precio\":800,\r\n    \"categoria_id\":\"9508ec40-4d0f-4462-bcc6-e9eaf572210e\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/productos",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"productos"
+							],
+							"query": [
+								{
+									"key": "limite",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "desde",
+									"value": "5",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjYyNjAzMjk4LCJleHAiOjE2NjI2MDY4OTh9.sT6UUcDDe4w-okkHRVOjpUVsTk955RJxj7cJyvHr6LU",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sku\": \"test 1\",\r\n        \"nombre\": \"test nombre\",\r\n        \"descripcion\": \"test descripcion\",\r\n        \"precio\": 3500,\r\n        \"categoria_id\": \"31e9735d-d8ac-4aa1-a316-9dc528870099\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/productos/109f03fd-3717-4f18-a826-2fda74d1a0b8",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"productos",
+								"109f03fd-3717-4f18-a826-2fda74d1a0b8"
+							],
+							"query": [
+								{
+									"key": "limite",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "desde",
+									"value": "5",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjYyNjAzMjk4LCJleHAiOjE2NjI2MDY4OTh9.sT6UUcDDe4w-okkHRVOjpUVsTk955RJxj7cJyvHr6LU",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{api}}/productos/570a32fb-5706-4b72-b6aa-f006a63f4b09",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"productos",
+								"570a32fb-5706-4b72-b6aa-f006a63f4b09"
+							],
+							"query": [
+								{
+									"key": "limite",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "desde",
+									"value": "5",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
