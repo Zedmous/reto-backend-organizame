@@ -101,48 +101,34 @@ const patchProductos = (req, res) => {
     res.json({ ok: true, msj: 'patch api' })
 }
 const exportProductos = async (req, res) => {
-    let i=0;
-    let indice=[];
-    let sku=[];
-    let nombre_producto=[];
-    let descripcion_producto=[];
-    let precio=[];
-    let nombre_corto_categoria=[];
-    let nombre_categoria=[];
-    let descripcion_categoria=[];
+    
+    
+    let fileName= 'Exports.csv';
+    data=[["#", "SKU", "nombre_producto","descripcion_producto","precio","nombre_corto_categoria","nombre_categoria","descripcion_categoria"]]
     const listado=listProductos.listado;
+    let i=0;
     while(i<listado.length){
-        indice.push(i+1)
-        sku.push(listado[i].sku)
-        nombre_producto.push(listado[i].nombre)
-        descripcion_producto.push(listado[i].descripcion)
-        precio.push(listado[i].precio)
+        let dataIndex=[];
+        dataIndex.push(i+1)
+        dataIndex.push(listado[i].sku)
+        dataIndex.push(listado[i].nombre)
+        dataIndex.push(listado[i].descripcion)
+        dataIndex.push(listado[i].precio)
         let {element,index}=await listCategorias.buscar(listado[i].categoria_id)
         console.log("elemento: ",element)
         if(element){
-            nombre_corto_categoria.push(element.corto)
-            nombre_categoria.push(element.nombre)
-            descripcion_categoria.push(element.descripcion)
+            dataIndex.push(element.corto)
+            dataIndex.push(element.nombre)
+            dataIndex.push(element.descripcion)
         }
+        data.push(dataIndex)
         i++;
     }
-    let datosCSV=[];
-    let fileName= 'Exports.csv';
-    let data={
-        '#':indice,
-        'sku':sku,
-        'nombre_producto':nombre_producto,
-        'descripcion_producto':descripcion_producto,
-        'precio':precio,
-        'nombre_corto_categoria':nombre_corto_categoria,
-        'nombre_categoria':nombre_categoria,
-        'descripcion_categoria':descripcion_categoria,
-      };
-    console.log("verificando los datos",data)
-    datosCSV.push(data);
-    const ws =XLSX.utils.json_to_sheet(datosCSV);
+    console.log(data)
+    
+    var ws = XLSX.utils.aoa_to_sheet(data);
     const wb = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+    XLSX.utils.book_append_sheet(wb, ws, 'Productos');
     XLSX.writeFile(wb, fileName);
     try {
         const fullPath = path.join(__dirname, `../${fileName}`)
